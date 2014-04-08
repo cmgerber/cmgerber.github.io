@@ -286,8 +286,9 @@ header#navtop { margin-bottom: 2em; clear: both; overflow: hidden; }
     header nav ul { float: left; overflow: hidden; padding: 0 3em 0 2em; border-left: 1px solid #ddd; line-height: 2em; }
 nav a, menu a { text-decoration: none; color: #555; }
 .navactive { color: #0078CF }
-.logo {margin-bottom: 3em;}
-.logo:hover {background: none;}
+.logo {margin-bottom: 3em; }
+.logo:hover {background: none; text-decoration: none;}
+#nameheader { color:#555; font-size: 5em; }
 		
 		
 /* -- GENERAL 
@@ -312,6 +313,9 @@ footer li:last-child { margin-right: 0; padding-right: 0; border-right: none; }
 
 /* -- HOME-PAGE
 ------------------------------------------------------------- */
+/* About Me */
+.aboutme {font-size: 1.2em;}
+
 /* Services */
 .services aside { color: #999; padding-top: 1em; border-top: 1px solid #DDD;}
 .services aside:after, .services h5:after { content: ""; display: block; height: 1px; width: 1em; background: #DDD; margin: 1em 0; }
