@@ -345,6 +345,8 @@ html[xmlns] .slides {display: block;}
 .flex-prev, .flex-next{ text-decoration: none; color: #999;	margin-left: 1em;}
 .flex-prev:hover, .flex-next:hover{ color: #0078CF}
 
+.slidethumb {height: 350px; max-width: 600px;}
+
 
 /* -- WORKS / Home-page and Works-page
 ------------------------------------------------------------- */
@@ -375,6 +377,8 @@ html[xmlns] .slides {display: block;}
 .main aside menu{padding: 0 0 0 1em; line-height: 2em;}
 .main aside menu a{color: #999;}
 .main aside menu .buttonactive {color: #0078CF }
+
+.thumb {max-height: 150px; max-width: 250px;}
 
 
 /* -- SUBPAGES 
