@@ -345,7 +345,7 @@ html[xmlns] .slides {display: block;}
 .flex-prev, .flex-next{ text-decoration: none; color: #999;	margin-left: 1em;}
 .flex-prev:hover, .flex-next:hover{ color: #0078CF}
 
-.slidethumb {height: 350px; max-width: 600px;}
+.slidethumb {height: 325px; max-width: 600px;}
 
 
 /* -- WORKS / Home-page and Works-page
