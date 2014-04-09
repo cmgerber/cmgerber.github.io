@@ -391,6 +391,9 @@ html[xmlns] .slides {display: block;}
 .work-page figure {margin-bottom: 3em;}
 .work-page figcaption {text-align: center; margin-top: 1em;}
 
+/*Resume-page*/
+.resume {height: 1000px; width: 800px;}
+
 /* Services-page */
 .warning { 
 	display: block; 
