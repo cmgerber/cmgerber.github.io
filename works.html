@@ -14,10 +14,10 @@
 
 	<meta name="viewport" content="width=device-width">
 	
-	<meta name="description" content="Designa Studio, a HTML5 / CSS3 template.">
-	<meta name="author" content="Sylvain Lafitte, Web Designer, sylvainlafitte.com">
+	<meta name="description" content="Colin Gerber's personal website. Resume and portfolio.">
+    <meta name="author" content="Colin Gerber">
 	
-	<title>WORKS // Designa Studio</title>
+	<title>PORTFOLIO// Colin Gerber</title>
 	
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<link rel="shortcut icon" type="image/png" href="favicon.png">
@@ -39,22 +39,24 @@
 
 	<header id="navtop">
 		<a href="index.html" class="logo fleft">
-			<img src="img/logo.png" alt="Designa Studio">
+			<span id="nameheader">Colin Gerber</span>
+            <!-- Ues for logo -->
+			<!-- <img src="img/logo.png" alt="Designa Studio"> -->
 		</a>
 		
 		<nav class="fright">
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
+				<li><a href="about.html">Resume</a></li>
 			</ul>
 			<ul>
 				<li><a href="works.html" class="navactive">Works</a></li>
-				<li><a href="services.html">Services</a></li>
-			</ul>
-			<ul>
-				<li><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
+			<!-- <ul>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="services.html">Services</a></li>
+			</ul> -->
 		</nav>
 	</header>
 
@@ -63,18 +65,18 @@
 
 		<header class="grid col-full">
 			<hr>
-			<p class="fleft">Works</p>
+			<p class="fleft">Portfolio</p>
 		</header>
 
 
 		<aside class="grid col-one-quarter mq2-col-full">
-			<p class="mbottom">Keep the same size ratio for thumbnails to avoid breaking the grid because of the margin-bottom.</p>
-			<menu>
+			<p class="mbottom">Collection of projects.</p>
+			<!-- <menu>
 				<a  id="work_all" class="arrow buttonactive">All</a><br>
 				<a  id="work_1" class="arrow">Web design</a><br>
 				<a  id="work_2" class="arrow">Web development</a><br>
 				<a  id="work_3" class="arrow">Graphic design</a>
-			</menu>
+			</menu> -->
 		</aside>
 		
 		<section class="grid col-three-quarters mq2-col-full">
@@ -82,126 +84,93 @@
 					<div class="grid-wrap works">
 		
 			
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_1">
-					<a href="work1.html" >
-						<img src="img/img.jpg" alt="" >
+				<figure class="grid col-one-quarter mq2-col-one-half">
+					<a href="neuroscience.html">
+					<img src="img/Basal_Ganglia_Diagram_Thumb.svg" alt="" class="thumb">
 					<span class="zoom"></span>
 					</a>
 					<figcaption>
-						<a href="work1.html" class="arrow">Project page!</a>
-						<p>Lorem ipsum dolor set amet</p>
+						<a href="neuroscience.html" class="arrow">Neuroscience</a>
+						<p>Parkinson's disease research at the NIH.</p>
 					</figcaption>
 				</figure>
 
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_1">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
+				<figure class="grid col-one-quarter mq2-col-one-half">
+					<a href="nuclearforensics.html">
+					<img src="img/Nuclear_Forensics_Thumb.png" alt="" class="thumb">
 					<span class="zoom"></span>
 					</a>
 					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
+						<a href="nuclearforensics.html" class="arrow">Nuclear Forensics</a>
+						<p>Nuclear forensics research project.</p>
 					</figcaption>
 				</figure>
-	
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_2">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
+			
+				<figure class="grid col-one-quarter mq2-col-one-half">
+					<a href="dataviz.html">
+					<img src="img/DC_Bike_Share_Chord_Chart_Thumb.jpg" alt="" class="thumb">
 					<span class="zoom"></span>
 					</a>
 					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
+						<a href="dataviz.html" class="arrow">Data Visualizations</a>
+						<p>Visualization from assorted projects.</p>
 					</figcaption>
 				</figure>
+			
+				<figure class="grid col-one-quarter mq2-col-one-half">
+					<a href="censusmapper.html">
+					<img src="img/Census_Mapper_Thumb.jpg" alt="" class="thumb">
+					<span class="zoom"></span>
+					</a>
+					<figcaption>
+						<a href="censusmapper.html" class="arrow">Census Mapper</a>
+						<p>A website for mapping census data.</p>
+					</figcaption>
+				</figure>
+				
+				<figure class="grid col-one-quarter mq2-col-one-half">
+	                <a href="peacecorps.html">
+	                <img src="img/Peace_Corps_Hackathon.png" alt="" class="thumb">
+	                <span class="zoom"></span>
+	                </a>
+	                <figcaption>
+	                    <a href="peacecorps.html" class="arrow">Peace Corps Hackathon</a>
+	                    <p>Website created for the Peace Corps.</p>
+	                </figcaption>
+            	</figure>
 
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_3">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
-					<span class="zoom"></span>
-					</a>
-					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
-					</figcaption>
-				</figure>
-
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_1">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
-					<span class="zoom"></span>
-					</a>
-					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
-					</figcaption>
-				</figure>
-
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_3">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
-					<span class="zoom"></span>
-					</a>
-					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
-					</figcaption>
-				</figure>
-
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_3">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
-					<span class="zoom"></span>
-					</a>
-					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
-					</figcaption>
-				</figure>
-
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_3">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
-					<span class="zoom"></span>
-					</a>
-					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
-					</figcaption>
-				</figure>
-
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_1">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
-					<span class="zoom"></span>
-					</a>
-					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
-					</figcaption>
-				</figure>
-
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_2">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
-					<span class="zoom"></span>
-					</a>
-					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
-					</figcaption>
-				</figure>
-
-				<figure class="grid col-one-third mq1-col-one-half mq2-col-one-third mq3-col-full work_1">
-					<a href="#" >
-					<img src="img/img.jpg" alt="" >
-					<span class="zoom"></span>
-					</a>
-					<figcaption>
-						<a href="#" class="arrow">Project x</a>
-						<p>Lorem ipsum dolor set amet</p>
-					</figcaption>
-				</figure>
+	            <figure class="grid col-one-quarter mq2-col-one-half">
+	                <a href="ploscloudexplorer.html">
+	                <img src="img/work_in_progress.jpg" alt="" class="thumb">
+	                <span class="zoom"></span>
+	                </a>
+	                <figcaption>
+	                    <a href="ploscloudexplorer.html" class="arrow">PLOS Cloud Explorer</a>
+	                    <p>A web app for exploring PLOS.</p>
+	                </figcaption>
+	            </figure>
+	        
+	            <figure class="grid col-one-quarter mq2-col-one-half">
+	                <a href="clinicaldata.html">
+	                <img src="img/work_in_progress.jpg" alt="" class="thumb">
+	                <span class="zoom"></span>
+	                </a>
+	                <figcaption>
+	                    <a href="clinicaldata.html" class="arrow">Clinical Data Visualizations</a>
+	                    <p>Visualizing clinical data.</p>
+	                </figcaption>
+	            </figure>
+	        
+	            <figure class="grid col-one-quarter mq2-col-one-half">
+	                <a href="#">
+	                <img src="img/work_in_progress.jpg" alt="" class="thumb">
+	                <span class="zoom"></span>
+	                </a>
+	                <figcaption>
+	                    <a href="#" class="arrow">More</a>
+	                    <p>In progress.</p>
+	                </figcaption>
+	            </figure>
 		
 		
 			</div> <!-- grid inside 3/4-->
@@ -213,13 +182,14 @@
 	</div> <!--main-->
 
 <div class="divide-top">
+	<p class="fleft">Connect</p>
 	<footer class="grid-wrap">
 		<ul class="grid col-one-third social">
-			<li><a href="#">RSS</a></li>
-			<li><a href="#">Facebook</a></li>
-			<li><a href="#">Twitter</a></li>
-			<li><a href="#">Google+</a></li>
-			<li><a href="#">Flickr</a></li>
+			<li><a href="https://www.linkedin.com/pub/colin-gerber/28/981/999">LinkedIn</a></li>
+            <li><a href="https://github.com/cmgerber">Github</a></li>
+            <li><a href="http://www.quora.com/Colin-Gerber">Quora</a></li>
+			<li><a href="https://twitter.com/Cmgerber">Twitter</a></li>
+			<li><a href="https://plus.google.com/+ColinGerber">Google+</a></li>
 		</ul>
 	
 		<div class="up grid col-one-third ">
@@ -231,8 +201,8 @@
 				<li><a href="index.html">Home</a></li>
 				<li><a href="about.html">About</a></li>
 				<li><a href="works.html">Works</a></li>
-				<li><a href="services.html">Services</a></li>
-				<li><a href="blog.html">Blog</a></li>
+				<!-- <li><a href="services.html">Services</a></li>
+				<li><a href="blog.html">Blog</a></li> -->
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
