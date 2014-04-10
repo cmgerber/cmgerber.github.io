@@ -379,6 +379,8 @@ html[xmlns] .slides {display: block;}
 .main aside menu .buttonactive {color: #0078CF }
 
 .thumb {max-height: 150px; max-width: 250px;}
+header .thumbtext {color: #999; font-style: italic;}
+.thumbtext:hover {color: #0078CF; }
 
 
 /* -- SUBPAGES 
