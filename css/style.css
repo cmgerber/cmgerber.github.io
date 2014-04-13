@@ -620,6 +620,71 @@ ul.page-numbers{float: right;overflow:hidden; display:block;}
 	h2, h3{page-break-after:avoid} 
 }
  
+/* -- Dataviz Highcharts Bar Graph
+------------------------------------------------------------- */
+ #wrapper{
+  height: 600px;
+  width: 800px;
+  border: solid 1px;
+ /* padding: 10px;*/
+  border-color: #E3E3E3;
+}
+#headerbar {
+    width:100%;
+    margin:auto;
+    background-color:#DDE4B5;
+    color:#5B585A;
+    font-size:26px;
+    text-align:center;
+    height:7%;
+}
+
+
+
+#ytd-budget-ref {
+    height: 40%;
+    width: 40%;
+    float: right;
+    /*margin-top: 10px;*/
+}
+
+#YTD-bar {
+    height: 40%;
+    width: 60%;
+    float: left;
+    /*margin-top: 10px;*/
+
+}
+
+#multi-bar {
+    height: 55%;
+    margin: auto;
+
+}
+
+#bar-section1 {
+    float: left;
+    width: 52%;
+    height: 100%;
+}
+
+#bar-section2 {
+    float: right;
+    width: 48%;
+    height: 100%;
+}
+
+.bar{
+    height:23%;
+}
+
+#bar-chart1{
+    height: 30%;
+}
+
+#bar-chart5{
+    height: 30%;
+}
  
  
 /* -------------------------------------------------------------

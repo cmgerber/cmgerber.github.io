@@ -30,6 +30,11 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <!-- highcharts bar graph script -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="js/barChart.js"></script>
+
     <!-- Google Analytics code -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -368,10 +373,63 @@ path.chord {
             <h4 style="text-align:center;">Highcharts Department Spending</h4><br>
 
             
-            <img src="img/Highcharts.jpg" alt="" >
+            <div id="wrapper">
+
+              <div id ="headerbar">Departmental Spending Report</div>
+
+                  <div id="YTD-bar">
+                  </div>
+
+
+                 <!--  <div id="ref-section">
+                      <div class="desc">Textual desc</div>
+                  </div> -->
+
+                  <div id="ytd-budget-ref">
+                  </div>
+
+                  <div id="multi-bar">
+
+                      <div id="bar-section1">
+
+                          <div class="bar" id="bar-chart1">
+                          </div>
+
+                          <div class="bar" id="bar-chart2">
+                          </div>
+
+                          <div class="bar" id="bar-chart3">
+                          </div>
+
+                          <div class="bar" id="bar-chart4">
+                          </div>
+
+                      </div>
+
+                      <div id="bar-section2">
+
+                          <div class="bar" id="bar-chart5">
+                          </div>
+
+                          <div class="bar" id="bar-chart6">
+                          </div>
+
+                          <div class="bar" id="bar-chart7">
+                          </div>
+
+                          <div class="bar" id="bar-chart8">
+                          </div>
+                      </div>
+
+                  </div>
+                  <!-- <div id="ref-section1">
+                      <div class="desc">Textual desc</div>
+                  </div> -->
+
+            </div>
             
             <figcaption>
-                <p>Department spending shown with a variety of bar charts.</p>
+                <p>Department spending shown with a variety of bar charts using <a href="http://www.highcharts.com/">Highcharts.js.</a></p>
             </figcaption>
         </figure>
         
