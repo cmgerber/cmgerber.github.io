@@ -29,6 +29,22 @@
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+    <!-- rounding images jquery script -->
+    <!-- based on http://webdesignerwall.com/tutorials/css3-rounded-image-with-jquery -->
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        $(".roundedimg").load(function() {
+            $(this).wrap(function(){
+                return '<span class="' + $(this).attr('class') + '" style="background:url(' + $(this).attr('src') + ') no-repeat center center; width: ' + $(this).width() + 'px; height: ' + $(this).height() + 'px;" />';
+            });
+            $(this).css("opacity","0");
+        });
+
+    });
+    </script>
+
     <!-- Google Analytics code -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -81,7 +97,12 @@
 		</header>
 		
 		<div class="grid col-one-half mq2-col-full aboutme">
-			<h2>About Me</h2>
+			<div id="personalpic">
+                <img src="img/Prof_Pic.jpg" alt="" class="roundedimg">
+            </div>
+
+            <h2>About Me</h2>
+
 			<p>I am currently getting my <a href="http://www.ischool.berkeley.edu/">Masters in Information Management and Systems (MIMS)</a> from the I School at UC Berkeley.</p>
 
             <p>Before Berkeley I worked in a <a href="http://www.ninds.nih.gov/research/labs/68.htm">Neurophysiological Pharmacology Lab</a> at the National Institute of Neurological Disease and Stroke at the National Institutes of Health. My undergraduate degree was a B.S. in Neuroscience from the University of California, Santa Barbara.</p>
