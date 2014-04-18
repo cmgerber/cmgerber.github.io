@@ -11,6 +11,60 @@
 	CSS Tricks (css-tricks.com).
 ------------------------------------------------------------- */
 
+/* social buttons contact page */
+
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
+ul.social-buttons {
+  text-align: center;
+  /*margin-top: 50px;*/
+}
+
+ul.social-buttons li {
+  /*display: inline-block;*/
+  margin-top: 15px;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+ul.social-buttons li a {
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 60px;
+  color: white;
+}
+
+ul.social-buttons li a.zocial-twitter {
+  background-color: #4099FF;
+}
+
+ul.social-buttons li a.zocial-quora {
+  background-color: #3B5998;
+}
+
+ul.social-buttons li a.zocial-github {
+  background-color: #3f729b;
+}
+
+ul.social-buttons li a.zocial-googleplus {
+  background-color: #4EBBFF;
+}
+
+ul.social-buttons li a.zocial-linkedin {
+  background-color: #0e76a8;
+}
+
+
+
 
 
 /* -------------------------------------------------------------
@@ -621,6 +675,18 @@ ul.page-numbers{float: right;overflow:hidden; display:block;}
 	h2, h3{page-break-after:avoid} 
 }
  
+/* Social button movement
+------------------------------------------------------------- */
+
+.soc {
+  transition: transform 0.2s ease-in-out 0; -moz-transition:-moz-transform 0.2s ease-in-out 0; -webkit-transition:-webkit-transform 0.2s ease-in-out 0; -o-transition:-o-transform 0.2s ease-in-out 0;
+}
+
+.soc:hover {
+  transform: rotateZ(27deg) scale(1.1); -moz-trasform:rotateZ(27deg) scale(1.1); -webkit-trasform: rotateZ(27deg) scale(1.1); -o-trasform:rotateZ(27deg) scale(1.1);
+}
+
+
 /* -- Dataviz Highcharts Bar Graph
 ------------------------------------------------------------- */
  #wrapper{
@@ -690,4 +756,4 @@ ul.page-numbers{float: right;overflow:hidden; display:block;}
  
 /* -------------------------------------------------------------
 ======	END
-------------------------------------------------------------- */
+------------------------------------------------------------- 
