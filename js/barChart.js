@@ -124,7 +124,7 @@ $(document).ready(function(){
 
       // get data
 
-      $.get('_data/YTD_percent.csv', function(data){
+      $.get('data/YTD_percent.csv', function(data){
             var lines = data.split("\n");
 
             var department_name = "YTD Percent";
@@ -133,14 +133,14 @@ $(document).ready(function(){
         $.each(lines, function(lineNo, line){
             var items = line.split(",");
             if (line!=="") {
-                
+
                 $.each(items, function(itemNo, item){
                     if (itemNo ===0){
                         switch(item){
                             case "Information Technology":
                                 name = "IT";
                                 break;
-                            case "Technical Support": 
+                            case "Technical Support":
                                 name = "TS";
                                 break;
                             case "Human Resources":
@@ -155,14 +155,14 @@ $(document).ready(function(){
                         department_data.push(parseFloat(item)*100);
                     }
                 });
-                
+
                 console.log(option_barchart.xAxis.categories);
             }
         }); //end .each lines
         option_barchart.series.push({
             name: department_name,
             data: department_data,
-            
+
         });
 
         var chart = new Highcharts.Chart(option_barchart);
@@ -170,7 +170,7 @@ $(document).ready(function(){
 
 
     //get ytd budget bar chart data
-    $.get("_data/ytd_nov_budget.csv", function(data){
+    $.get("data/ytd_nov_budget.csv", function(data){
         var lines = data.split("\r");
 
         budget = {
@@ -228,8 +228,8 @@ $(document).ready(function(){
         datasets = [];
         var newcolor = ['#7fc97f','#beaed4','#fdc086','#ffff99','#386cb0','#f0027f','#bf5b17','#666666'];
 
-    
-    $.get("_data/month_percent.csv", function(data){
+
+    $.get("data/month_percent.csv", function(data){
         var lines = data.split("\n");
 
         $.each(lines, function(lineNo, line){
@@ -248,7 +248,7 @@ $(document).ready(function(){
                             case "Information Technology":
                                 department_name = "IT";
                                 break;
-                            case "Technical Support": 
+                            case "Technical Support":
                                 department_name = "TS";
                                 break;
                             case "Human Resources":
@@ -339,5 +339,5 @@ $(document).ready(function(){
                 })); // end charts.push
         }); // end .each datasets
     }); //end .get
-    
+
 });
