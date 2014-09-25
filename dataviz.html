@@ -8,24 +8,24 @@
 
 <head>
     <meta charset="UTF-8">
-    
+
     <!-- Remove this line if you use the .htaccess -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <meta name="viewport" content="width=device-width">
-    
+
     <meta name="description" content="Colin Gerber's personal website. Resume and portfolio.">
     <meta name="author" content="Colin Gerber">
 
-    
+
     <title>PROJECT // Colin Gerber</title>
-    
+
     <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
   <link rel="shortcut icon" type="image/png" href="faviconcg.png">
-    
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -54,39 +54,39 @@
     display: block;
     margin: auto;
 }
- 
+
 #circle circle {
   fill: none;
   pointer-events: all;
 }
- 
+
 .group path {
   fill-opacity: .5;
 }
- 
+
 path.chord {
   fill-opacity: .67;
 }
- 
+
 #circle:hover path.fade {
   display: none;
 }
- 
+
 .chart rect {
   fill: steelblue;
 }
- 
+
 .chart text {
   fill: white;
   font: 10px sans-serif;
   text-anchor: end;
 }
- 
+
 /*#container1 {
   width: 100%;
   height: 95%;
 }*/
- 
+
 #chartContainer {
     height: 200px;
   /*margin: 20px;
@@ -95,13 +95,13 @@ path.chord {
   width: 30%;
   height: 95%;*/
 }
- 
+
 #chordContainer {
   /*position: absolute;
   left: 5%;
   width: 70%;*/
 }
- 
+
 </style>
 
 <body>
@@ -116,7 +116,7 @@ path.chord {
             <!-- Ues for logo -->
             <!-- <img src="img/logo.png" alt="Designa Studio"> -->
         </a>
-        
+
         <nav class="fright">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -147,13 +147,13 @@ path.chord {
         <p class="mbottom">A collection of data visualizations I have done for various projects and classes.
         </p>
 
-        
+
         <h6>Details</h6>
         <ul class="halfmbottom">
             <li>Design (Logo, UI, ...)</li>
             <li>Front-end development</li>
         </ul>
-        
+
         <h6>Technology</h6>
         <ul class="halfmbottom">
             <li>D3.js</li>
@@ -162,62 +162,62 @@ path.chord {
             <li>HTML</li>
             <li>CSS</li>
         </ul>
-        
-        
+
+
         <menu>
             <ul>
                 <li><a href="#navchord" class="arrow">Chord Chart</a></li>
                 <li><a href="#navHighcharts" class="arrow">Highcharts</a></li>
             </ul>
         </menu>
-        
+
     </aside>
-    
+
         <section class="grid col-three-quarters mq2-col-two-thirds mq3-col-full">
-        
-        
+
+
 
         <figure class="" id="navchord">
 
         <h4 style="text-align:center;">NE DC Bike Share Chord Graph</h4><br>
 
         <div id="container1">
- 
+
           <div id="chartContainer">
           </div>
-         
+
           <div id="chordContainer">
           </div>
         </div>
-    
+
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="http://dimplejs.org/dist/dimple.v1.1.5.min.js"></script>
-         
-         
+
+
         <script>
-         
+
         var width = ((document.getElementById("chordContainer").offsetWidth)*.8),
             height = ((document.getElementById("chordContainer").offsetWidth)*.8),
             outerRadius = Math.min(width, height) / 2 - 150,
             innerRadius = outerRadius - 24;
-            
-         
+
+
         var formatPercent = d3.format(".1%");
-         
+
         var fill = d3.scale.category20c();
-         
+
         var arc = d3.svg.arc()
             .innerRadius(innerRadius)
             .outerRadius(outerRadius);
-         
+
         var layout = d3.layout.chord()
             .padding(.04)
             .sortSubgroups(d3.descending)
             .sortChords(d3.ascending);
-         
+
         var path = d3.svg.chord()
             .radius(innerRadius);
-         
+
         var svg = d3.select("#chordContainer").append("svg")
             .attr("width", width)
             .attr("height", height)
@@ -225,11 +225,11 @@ path.chord {
           .append("g")
             .attr("id", "circle")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-         
+
         svg.append("circle")
             .attr("r", outerRadius);
-         
-         
+
+
         d3.csv("ne_stations.csv", function(error, imports) {
           var matrix = [],
               data = imports;
@@ -247,24 +247,24 @@ path.chord {
           };
           console.log('here', matrix);
           console.log(name);
-         
+
             // Compute the chord layout.
             layout.matrix(matrix);
-         
+
             // Add a group per neighborhood.
             var group = svg.selectAll(".group")
                 .data(layout.groups)
               .enter().append("g")
                 .attr("class", "group")
                 .on("mouseover", mouseover);
-         
+
             // Add the group arc.
             var groupPath = group.append("path")
                 .attr("id", function(d, i) { return "group" + i; })
                 .attr("d", arc)
                 .style("fill", function(d) { return fill(d.index); })
                 .style("stroke", function(d) { return fill(d.index); })
-         
+
             group.append("text")
               .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
               .attr("dy", ".35em")
@@ -275,8 +275,8 @@ path.chord {
               })
               .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
               .text(function(d) { console.log(d.index); return name[d.index]; });
-         
-         
+
+
             // Add the chords.
             var chord = svg.selectAll(".chord")
                 .data(layout.chords)
@@ -285,8 +285,8 @@ path.chord {
                 .style("stroke", function(d) { return d3.rgb(fill(d.source.index)).darker(); })
                 .style("fill", function(d) { return fill(d.source.index); })
                 .attr("d", path);
-         
-         
+
+
             function mouseover(d, i) {
               var cur_name = name[i];
               console.log(name[i]);
@@ -294,14 +294,14 @@ path.chord {
                 return p.source.index != i
                     && p.target.index != i;
               });
-         
+
               clearBox('chartContainer');
-         
+
               var ssvg = dimple.newSvg("#chartContainer", ((document.getElementById("chartContainer").offsetWidth)*1), ((document.getElementById("chordContainer").offsetWidth)*1));
               d3.csv("ne_stations_sub.csv", function(error, subs) {
                   var sub = subs,
                       data = [];
-         
+
                   for(var i=0;i<sub.length;i++){
                     var obj = sub[i];
                     var row = [];
@@ -312,23 +312,23 @@ path.chord {
                       }
                     }
                   };
-         
+
                   var myChart = new dimple.chart(ssvg, data);
                   myChart.setBounds('20%', '0%', '75%', '15%')
                   myChart.addMeasureAxis("x", "Number of Riders");
                   var y = myChart.addCategoryAxis("y", "Rider Type");
                   myChart.addSeries(null, dimple.plot.bar);
                   myChart.draw();
-         
+
                   console.log(data);
                 });
               }
-         
+
               var ssvg = dimple.newSvg("#chartContainer", ((document.getElementById("chartContainer").offsetWidth)*1), ((document.getElementById("chordContainer").offsetWidth)*1));
               d3.csv("ne_stations_sub.csv", function(error, subs) {
                   var sub = subs,
                       data = [];
-         
+
                   for(var i=0;i<sub.length;i++){
                     var obj = sub[i];
                     var row = [];
@@ -339,23 +339,23 @@ path.chord {
                       }
                     }
                   };
-         
+
                   var myChart = new dimple.chart(ssvg, data);
                   myChart.setBounds('20%', '0%', '75%', '15%')
                   myChart.addMeasureAxis("x", "Number of Riders");
                   var y = myChart.addCategoryAxis("y", "Rider Type");
                   myChart.addSeries(null, dimple.plot.bar);
                   myChart.draw();
-         
+
                   console.log(data);
                 });
-         
+
               function clearBox(elementID) {
                   document.getElementById(elementID).innerHTML = "";
                 }
-              
+
             });
-         
+
         </script>
 
         <figcaption>
@@ -366,13 +366,13 @@ path.chord {
 
         </figure>
 
-        
+
 
         <figure class="" id="navHighcharts">
 
             <h4 style="text-align:center;">Highcharts Department Spending</h4><br>
 
-            
+
             <div id="wrapper">
 
               <div id ="headerbar">Departmental Spending Report</div>
@@ -427,17 +427,17 @@ path.chord {
                   </div> -->
 
             </div>
-            
+
             <figcaption>
                 <p>Department spending shown with a variety of bar charts using <a href="http://www.highcharts.com/">Highcharts.js.</a></p>
             </figcaption>
         </figure>
-        
-    
-        </section>  
-        
-        
-        
+
+
+        </section>
+
+
+
     </div> <!--main-->
 
 <div class="divide-top">
@@ -450,11 +450,11 @@ path.chord {
             <li><a href="https://twitter.com/Cmgerber">Twitter</a></li>
             <li><a href="https://plus.google.com/+ColinGerber">Google+</a></li>
         </ul>
-    
+
         <div class="up grid col-one-third ">
             <a href="#navtop" title="Go back up">&uarr;</a>
         </div>
-        
+
         <nav class="grid col-one-third ">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -470,8 +470,8 @@ path.chord {
 
 </div>
 
-<!-- Javascript - jQuery -->
-<script src="http://code.jquery.com/jquery.min.js"></script>
+<!-- Javascript - jQuery http://code.jquery.com/jquery.min.js-->
+<script src="js/jquery-1.7.2.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
 
 <!--[if (gte IE 6)&(lte IE 8)]>
