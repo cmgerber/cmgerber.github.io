@@ -1,22 +1,59 @@
 //list of locations [location, lat, long, person, year]
 var locations = [['San Diego', 32.9953, -117.2603, 'lcl', 2014], ['Lake George', 43.4244, -73.7153, 'lc', 2014],
                 ['Edinburgh', 55.9531, -3.1889, 'c', 2014], ['Elgin', 57.6500, -3.3150, 'c', 2014],
-                ['Berkeley', 37.8717, -122.2728, 'lcl', 2013],
+                ['Berkeley', 37.8717, -122.2728, 'lcl', 2013], ['Melbourne', -37.8136, 144.9631, 'l', 2013],
                 ['Costa Rica', 9.9333, -84.0833, 'lc', 2013], ['Cary', 35.7789, -78.8003, 'lc', 2013],
                 ['Wilmington', 34.2233, -77.9122, 'lc', 2013],
                 ['Atlanta', 33.7550, -84.3900, 'lc', 2013], ['Philadelphia', 39.9500, -75.1667, 'lc', 2012],
+                ['Richmond', 37.5333, -77.4667, 'lc', 2012],
                 ['Washington DC', 38.8951, -77.0367, 'lcl', 2011], ['Rome', 41.9000, 12.5000, 'c', 2008],
-                ['Quebec', 46.8167, -71.2167, 'c', 2007], ['Seville', 37.3772, -5.9869, 'c', 2006],
+                ['Quebec', 46.8167, -71.2167, 'c', 2007], ['Santa Barbara', 34.4258, -119.7142, 'c', 2007],
+                ['Seville', 37.3772, -5.9869, 'c', 2006], ['London', 51.5072, -0.1275, 'lc', 2006],
                 ['Madrid', 40.4000, -3.6833, 'c', 2006], ['Paris', 48.8567, 2.3508, 'c', 2006],
                 ['Vienna', 48.2000, 16.3667, 'c', 2006],
                 ['Vancouver', 49.2500, -123.1000, 'c', 2004]];
 
 
 
-var app = new clTravels([32.9953, -117.2603], 2);
+var app = new clTravels([37.3772, -5.9869], 2);
 window.addEventListener('load', function() {
     app.init(document.getElementById("map"));
     getTravel(app);
+
+    //filter buttons
+    var rows = $('table tr');
+    var LC = $('.lc');
+    var C = $('.c');
+    var L = $('.l');
+    var LCL = $('lcl');
+
+    $('#LindsColin').click(function() {
+                LC.show();
+                C.hide();
+                L.hide();
+                LCL.show();
+    });
+
+    $('#Colin').click(function() {
+                LC.hide();
+                C.show();
+                L.hide();
+                LCL.hide();
+    });
+
+    $('#Linds').click(function() {
+                LC.hide();
+                C.hide();
+                L.show();
+                LCL.hide();
+    });
+
+    $('#ShowAll').click(function() {
+        LC.show();
+        C.show();
+        L.show();
+        LCL.show();
+    });
 });
 
 function clTravels(center, zoom) {
@@ -99,7 +136,7 @@ function tableCreate(data){
                         td.appendChild(document.createTextNode(d));
                     }
                     td.className = td.className + "row-cell " +
-                    data[i-1][1] + ' ' + data[i-1][2];
+                    data[i-1][1] + ' ' + data[i-1][2] + ' ' + data[i-1][3];
                     td.style.border = "1px solid black";
                     //add click listener to each cell
                     //will refocus map on relevant Travel
@@ -113,3 +150,5 @@ function tableCreate(data){
     }
     body.appendChild(tbl);
 }
+
+
