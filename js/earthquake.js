@@ -25,22 +25,33 @@ USGSEarthquakes.prototype.reCenter = function(lat, lng) {
     this.map.panTo(new L.LatLng(lat, lng));
 };
 
+Array.prototype.maxLoc = function() {
+    var max = [this[0][0], 0];
+    var len = this.length;
+    for (var i = 1; i < len; i++) if (this[i][0] > max[0]) max = [this[i][0], 1];
+    return max;
+};
 
 function getEarthquake(obj) {
     $.getJSON("http://io.milowski.com/usgs/earthquakes/feed/v1.0/summary/all_hour.geojson", function(data){
         var Earthquakes = [];
         console.log(data);
+
         tableCreate(data.features);
         $.each(data.features, function(i,e) {
-            Earthquakes.push([e.properties.title,e.geometry.coordinates]);
+            Earthquakes.push([e.properties.mag, e.properties.title,e.geometry.coordinates]);
+            date = new Date();
+            date.setTime(e.properties.time);
             obj.addEarthquake([e.geometry.coordinates[1],e.geometry.coordinates[0]],
-                              e.properties.title, e.properties.mag);
+                              e.properties.title + ' ' + date, e.properties.mag);
         });
-        obj.reCenter(Earthquakes[0][1][1], Earthquakes[0][1][0]);
+        console.log('max', Earthquakes.maxLoc());
+        obj.reCenter(Earthquakes[Earthquakes.maxLoc()[1]][2][1], Earthquakes[Earthquakes.maxLoc()[1]][2][0]);
         console.log('updated');
     });
     setTimeout(function() {
         $("#map .leaflet-marker-pane").empty();
+        $("#map .leaflet-zoom-animated g").remove();
         $("#eqTable tr").remove();
         getEarthquake(app);}, 300000); //update data every 5 minutes
 }
