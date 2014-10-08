@@ -28,7 +28,7 @@ USGSEarthquakes.prototype.reCenter = function(lat, lng) {
 Array.prototype.maxLoc = function() {
     var max = [this[0][0], 0];
     var len = this.length;
-    for (var i = 1; i < len; i++) if (this[i][0] > max[0]) max = [this[i][0], 1];
+    for (var i = 1; i < len; i++) if (this[i][0] > max[0]) max = [this[i][0], i];
     return max;
 };
 
