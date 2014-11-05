@@ -116,8 +116,11 @@
 			<h2>Send me a message</h2>
 			<p class="warning">Include your name, email and message below.</p>
 
-			<form id="contact_form" class="contact_form" action="contact_new.php" method="post" name="contact_form">
-				<ul>
+			<form action="http://getsimpleform.com/messages?form_api_token=9b501984332731d2181f0ca879100ec7" method="post">
+			  <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+			  <input type='hidden' name='redirect_to' value='<the complete return url e.g. http://colingerber.com/thanks.html>' />
+			  <!-- all your input fields here.... -->
+			  <ul>
 					<li>
 						<label for="name">Your name:</label>
 						<input type="text" name="name" id="name" required class="required" >
@@ -134,7 +137,13 @@
 						<button type="submit" id="submit" name="submit" class="button fright">Send it</button>
 					</li>
 				</ul>
+			  <!-- <input type='text' name='test' />
+			  <input type='submit' value='Test form' /> -->
 			</form>
+
+			<!-- <form id="contact_form" class="contact_form" action="contact_new.php" method="post" name="contact_form"> -->
+
+			<!-- </form> -->
 		</section>
 
 	</div>
