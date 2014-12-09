@@ -84,7 +84,7 @@
 
         <aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
 
-        <p class="mbottom">This page has assorted small projects I have worked on.
+        <p class="mbottom">This page has assorted small projects I have worked on. Some for fun and some for school.
         </p>
 
         <!-- <h6>Details</h6>
@@ -101,15 +101,24 @@
 
         <h6>Links</h6>
         <ul class="mbottom">
-            <a href="earthquakes.html" >
+            <li><a href="earthquakes.html" >
                 Earthquakes - Live Site
-            </a>
+            </a></li>
         </ul>
 
-        <h6>Other Contributors</h6>
+        <h6>Page Navigation</h6>
+        <menu>
+            <ul>
+                <li><a href="#earthquake" class="arrow">Earthquake Map</a></li>
+                <li><a href="#ballAnimation" class="arrow">Ball Animation</a></li>
+            </ul>
+        </menu>
+
+
+<!--         <h6>Other Contributors</h6>
         <ul class="halfmbottom">
 
-        </ul>
+        </ul> -->
 
         <!-- <h6>Links</h6>
         <ul class="mbottom">
@@ -125,7 +134,7 @@
 
         <h4 style="text-align:center; text-weight:bold;">Earthquake Mapping</h4><br>
 
-        <figure class="">
+        <figure class="" id='earthquake'>
             <a href="earthquakes.html" >
             <img src="img/earthquake_thumb.jpg" alt="" >
             </a>
@@ -133,6 +142,64 @@
                 <p>This little site tracks and maps the earthquakes over the last hour. It automatically updates the page every five minutes.</p>
             </figcaption>
         </figure>
+
+        </section>
+
+        <section class="grid col-three-quarters mq2-col-two-thirds mq3-col-full">
+
+        <h4 id='ballAnimation' style="text-align:center; text-weight:bold;">Ball Animation</h4><br>
+
+        <figure class="" style="display: block;
+            margin-right: 0px;">
+            <canvas id="canvas" width="800" height="500" style="display: block;
+            margin-left: auto;
+            margin-right: auto;"></canvas>
+            <figcaption>
+                <p>I saw this animation <a href="http://www.reddit.com/r/gifs/comments/2on8si/connecting_to_server_so_mesmerizing/cmow0sz">on reddit</a> and decided to play around with it. I'm using the JavaScipt conversion u/HedgehogSemen created.</p>
+            </figcaption>
+        </figure>
+
+        <script type="text/javascript">
+        // Based off code from here - http://www.reddit.com/r/gifs/comments/2on8si/connecting_to_server_so_mesmerizing/cmow0sz
+
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        var numBalls = 24; // numb balls
+        var timeStep = 0;
+        var ballYTravel = 100;
+        var ballRadius = 5;
+        var ballSpace = 20;
+
+        var animationPosX = 100;
+
+        function clearCanvas() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function drawBall(x, y, radius) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        function animateBalls() {
+            clearCanvas();
+
+            for (var i = 0; i < numBalls; i++) {
+                drawBall(animationPosX + ballSpace * i, getY(i, timeStep), ballRadius);
+            }
+
+            timeStep++;
+            requestAnimationFrame(animateBalls);
+        }
+
+        function getY(i, timeStep) {
+            return 200 + ballYTravel / 2 * (Math.sin(timeStep * (i / 200 + 0.08)));
+        }
+
+        animateBalls();
+        </script>
 
         </section>
 
