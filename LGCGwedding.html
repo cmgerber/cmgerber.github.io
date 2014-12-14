@@ -7,31 +7,31 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-	<meta charset="UTF-8">
-	
-	<!-- Remove this line if you use the .htaccess -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
 
-	<meta name="viewport" content="width=device-width">
+    <!-- Remove this line if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width">
 
     <!-- linked thumbnail image -->
     <meta property="og:image" content="img/Prof_Pic.jpg"/>
-	
-    <meta name="description" content="Colin Gerber and Lindsay Goldsworthy's Wedding Page. This is the site to get all the 
+
+    <meta name="description" content="Colin Gerber and Lindsay Goldsworthy's Wedding Page. This is the site to get all the
     infromation you need about our upcoming wedding.">
     <meta name="author" content="Colin Gerber">
-	
-	<title>Colin and Lindsay Wedding</title>
-	
-	<!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
-	<link rel="shortcut icon" type="image/png" href="faviconcg.png">
-	
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style.css">
-	
-	<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+
+    <title>Colin and Lindsay Wedding</title>
+
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+    <link rel="shortcut icon" type="image/png" href="faviconcg.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
     <!-- rounding images jquery script -->
     <!-- based on http://webdesignerwall.com/tutorials/css3-rounded-image-with-jquery -->
@@ -60,11 +60,246 @@
       ga('send', 'pageview');
 
     </script>
+
+    <!-- leaflet js -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="js/wedding_map.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="css/wedding_map.css">
+
 </head>
 
 <body>
+<style type="text/css">
+  body {
+    background-image:none;
+  }
 
-<p>Wedding Travel Info Here</p>
+</style>
+<!-- Prompt IE 7 users to install Chrome Frame -->
+<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<div class="container">
+
+  <header id="navtop">
+    <a href="LGCGwedding.html" class="logo fleft">
+            <span id="nameheader">Lindsay and Colin's Wedding</span>
+            <!-- Ues for logo -->
+      <!-- <img src="img/logo.png" alt="Designa Studio"> -->
+    </a>
+
+    <!-- <nav class="fright">
+      <ul>
+        <li><a href="index.html" class="navactive">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+      <ul>
+        <li><a href="works.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul> -->
+      <!-- <ul>
+        <li><a href="blog.html">Blog</a></li>
+                <li><a href="services.html">Services</a></li>
+      </ul> -->
+<!--     </nav> -->
+  </header>
+
+
+<div class="home-page main">
+  <section class="grid-wrap" >
+    <header class="grid col-full">
+      <hr>
+     <!--  <p class="fleft">Home</p> -->
+      <!-- <a href="resume.html" class="arrow fright">see my resume</a> -->
+    </header>
+
+    <div class="grid col-one-half mq2-col-full aboutme">
+      <div id="personalpic">
+                <img src="img/wedding/Colin_Linds_Pic.JPG" alt="" class="roundedimg">
+            </div>
+
+            <h2>Wedding Stuff</h2>
+
+      <p>Hi friends and family.</p>
+
+            <p>Before Berkeley I worked in a <a href="http://www.ninds.nih.gov/research/labs/68.htm">Neurophysiological Pharmacology Lab</a> at the National Institute of Neurological Disease and Stroke at the National Institutes of Health. My undergraduate degree was a B.S. in Neuroscience from the University of California, Santa Barbara.</p>
+
+            <p>Playing water polo is my passion and I have been competitively playing water polo since 2003. I also love to travel and started <a href="personal.html">making a map</a> to track my travels.
+      </p>
+    </div>
+
+
+     <div class="slider grid col-one-half mq2-col-full">
+       <div id="map"></div>
+        <h3 id='tableTitle'>Wedding Locations</h3>
+        <div id='eqTable'>
+        </div>
+     </div>
+
+     </section>
+
+    <!-- Uncomment for text row section -->
+  <!-- <section class="services grid-wrap">
+    <header class="grid col-full">
+      <hr>
+      <p class="fleft">Portfolio</p>
+      <a href="services.html" class="arrow fright">see more services</a>
+    </header>
+
+    <article class="grid col-one-third mq3-col-full">
+      <aside>01</aside>
+      <h5>Web design</h5>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+    </article>
+
+    <article class="grid col-one-third mq3-col-full">
+      <aside>02</aside>
+      <h5>Web development</h5>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+    </article>
+
+    <article class="grid col-one-third mq3-col-full">
+      <aside>03</aside>
+      <h5>Graphic design</h5>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim.</p>
+    </article>
+  </section> -->
+
+<section class="works grid-wrap">
+  <header class="grid col-full">
+      <hr>
+      <h3 class="fleft">Suggested Hotels</h3>
+      <!-- <a href="works.html" class="thumbtext fright">see more projects</a> -->
+    </header>
+
+      <figure class="grid col-one-quarter mq2-col-one-half mq3-col-full work_1 mq1-col-one-half">
+        <a href="http://hamptoninn3.hilton.com/en/hotels/north-carolina/hampton-inn-and-suites-wilmington-wrightsville-beach-ILMWVHX/index.html">
+        <img src="img/wedding/hampton.jpg" alt="" class="thumb">
+        <span class="zoom"></span>
+        </a>
+        <figcaption>
+          <a href="http://hamptoninn3.hilton.com/en/hotels/north-carolina/hampton-inn-and-suites-wilmington-wrightsville-beach-ILMWVHX/index.html" class="thumbtext">Hampton Inn & Suites</a>
+          <p>Parkinson's disease research at the NIH.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="grid col-one-quarter mq2-col-one-half mq3-col-full work_1 mq1-col-one-half">
+        <a href="http://www.ihg.com/holidayinnresorts/hotels/us/en/wrightsville-beach/wrgnc/hoteldetail">
+        <img src="img/wedding/holiday.jpg" alt="" class="thumb">
+        <span class="zoom"></span>
+        </a>
+        <figcaption>
+          <a href="http://www.ihg.com/holidayinnresorts/hotels/us/en/wrightsville-beach/wrgnc/hoteldetail" class="thumbtext">Holiday Inn Resort</a>
+          <p>Nuclear forensics research project.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="grid col-one-quarter mq2-col-one-half mq3-col-full work_1 mq1-col-one-half">
+        <a href="http://www.marriott.com/hotels/travel/ilmri-residence-inn-wilmington-landfall/">
+        <img src="img/wedding/residence.jpg" alt="" class="thumb">
+        <span class="zoom"></span>
+        </a>
+        <figcaption>
+          <a href="http://www.marriott.com/hotels/travel/ilmri-residence-inn-wilmington-landfall/" class="thumbtext">Residence Inn</a>
+          <p>Visualization from assorted projects.</p>
+        </figcaption>
+      </figure>
+  </section>
+
+    <section class="works grid-wrap">
+    <header class="grid col-full">
+            <hr>
+            <h3 class="fleft">Rental Companies</h3>
+            <!-- <a href="works.html" class="thumbtext fright">see more projects</a> -->
+        </header>
+
+            <figure class="grid col-one-quarter mq2-col-one-half mq3-col-full work_1 mq1-col-one-half">
+                <a href="http://www.bryantre.com/">
+                <img src="img/wedding/bryant.jpg" alt="" class="thumb">
+                <span class="zoom"></span>
+                </a>
+                <figcaption>
+                    <a href="http://www.bryantre.com/" class="thumbtext">Bryant Real Estate</a>
+                    <p>Website created for the Peace Corps.</p>
+                </figcaption>
+            </figure>
+
+            <figure class="grid col-one-quarter mq2-col-one-half mq3-col-full work_1 mq1-col-one-half">
+                <a href="http://www.intracoastalrealty.com/">
+                <img src="img/wedding/intracoastal.jpg" alt="" class="thumb">
+                <span class="zoom"></span>
+                </a>
+                <figcaption>
+                    <a href="http://www.intracoastalrealty.com/" class="thumbtext">Intracoastal Reality</a>
+                    <p>A web app for exploring PLOS.</p>
+                </figcaption>
+            </figure>
+
+            <figure class="grid col-one-quarter mq2-col-one-half mq3-col-full work_1 mq1-col-one-half">
+                <a href="http://www.homeaway.com/vacation-rentals/north-carolina/wrightsville-beach/r7982">
+                <img src="img/wedding/homeaway.png" alt="" class="thumb">
+                <span class="zoom"></span>
+                </a>
+                <figcaption>
+                    <a href="http://www.homeaway.com/vacation-rentals/north-carolina/wrightsville-beach/r7982" class="thumbtext">HomeAway</a>
+                    <p>Visualizing clinical data.</p>
+                </figcaption>
+            </figure>
+
+            <figure class="grid col-one-quarter mq2-col-one-half mq3-col-full work_1 mq1-col-one-half">
+                <a href="http://www.vrbo.com/vacation-rentals/usa/north-carolina/coastal/southern-coast/wrightsville-beach">
+                <img src="img/wedding/vrbo.png" alt="" class="thumb">
+                <span class="zoom"></span>
+                </a>
+                <figcaption>
+                    <a href="http://www.vrbo.com/vacation-rentals/usa/north-carolina/coastal/southern-coast/wrightsville-beach" class="thumbtext">VRBO</a>
+                    <p>Explore Assorted Small Projects</p>
+                </figcaption>
+            </figure>
+    </section>
+  </div> <!--main-->
+
+<div class="divide-top">
+    <p class="fleft">Connect</p>
+  <footer class="grid-wrap">
+    <ul class="grid col-one-third social">
+      <li><a href="https://www.linkedin.com/pub/colin-gerber/28/981/999">LinkedIn</a></li>
+            <li><a href="https://github.com/cmgerber">Github</a></li>
+            <li><a href="http://www.quora.com/Colin-Gerber">Quora</a></li>
+      <li><a href="https://twitter.com/Cmgerber">Twitter</a></li>
+      <li><a href="https://plus.google.com/+ColinGerber">Google+</a></li>
+
+    </ul>
+
+    <div class="up grid col-one-third ">
+      <a href="#navtop" title="Go back up">&uarr;</a>
+    </div>
+
+    <nav class="grid col-one-third ">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="works.html">Portfolio</a></li>
+        <!-- <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li> -->
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+</div>
+
+</div>
+
+<!-- Javascript - jQuery -->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script src="js/selectivizr.js"></script>
+<![endif]-->
+
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/scripts.js"></script>
 
 </body>
 </html>
