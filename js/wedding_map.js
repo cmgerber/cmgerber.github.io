@@ -2,8 +2,8 @@
 var locations = [['Beach Access 12', 34.216754, -77.787763, 'lcl', "Ceremony"],
                 ['Bluewater Grill', 34.217774, -77.812611, 'lc', 'Reception'],
                 ['Hampton Inn & Suites', 34.223223, -77.819617, 'lcl', "Hotel"],
-                ['Holiday Inn Resort', 34.220396, -77.785332, 'lcl', "Hotel"],
-                ['Residence Inn', 34.236389, -77.826856, 'lcl', "Hotel"]];
+                ['Holiday Inn Resort', 34.220396, -77.785332, 'lcl', "Hotel"]];
+                //['Residence Inn', 34.236389, -77.826856, 'lcl', "Hotel"]
 
 
 
