@@ -341,7 +341,7 @@ header#navtop { /*margin-bottom: 2em*/; clear: both; overflow: hidden; }
     header nav ul { float: left; overflow: hidden; margin-top: 2em; padding: 0 3em 0 2em; border-left: 1px solid #ddd; line-height: 2em; }
 nav a, menu a { text-decoration: none; color: #555; }
 .navactive { color: #0078CF }
-.logo {/*margin-bottom: 3em;*/ }
+.logo {/*margin-bottom: 3em;*/ display: block; margin-right: auto; margin-left: auto;}
 .logo:hover {background: none; text-decoration: none;}
 #nameheader { float: left; color:#555; font-size: 5em; }
 
@@ -537,7 +537,11 @@ header .thumbtext {color: #999; font-style: italic;}
 .tab_container > article { display:none; }
 .tab_container > article:first-child { display: block; }
 
+/* -------------------------------------------------------------
+======  WEDDING
+------------------------------------------------------------- */
 
+/*.wedding_img {max-height: 250px; max-width: 200px;}*/
 
 /* -------------------------------------------------------------
 ======	BLOG
