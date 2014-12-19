@@ -542,8 +542,12 @@ header .thumbtext {color: #999; font-style: italic;}
 ------------------------------------------------------------- */
 
 /*.wedding_img {max-height: 250px; max-width: 200px;}*/
-.weddingSeal {max-height: 150px; max-width: 150px; display: block; margin-left: auto;
-    margin-right: auto;}
+.weddingSeal {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 150px;
+    max-width: 150px;}
 
 /* -------------------------------------------------------------
 ======	BLOG
